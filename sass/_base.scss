@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "RangeMono";
+  src: url(../font_ttf/range-mono-medium-webfont.ttf);
+}
+@font-face {
+  font-family: "VeenerTwo";
+  src: url(../font_ttf/FontsFree-Net-Veneer-W01-Two.ttf);
+}
+
+//? COLOR VARIABLE.
+$color-primary: #ffffff;
+$color-dark-1: #000000;
+$color-blue-dark: #00006f;
+$color-grey-dark: #b1b1b1;
+$color-dark-2: #141414;
+
+//? FONT VARIABLE.
+$font-display: "RangeMono", sans-serif;
+$font-primary: "VeenerTwo", sans-serif;
+
+//? BREAKPOINT VARIABLE.
+$bp-largest: 63em;
+$bp-medium: 48em;
+$bp-small: 40em;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-display;
+  color: $color-dark-1;
+  font-weight: 300;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.dp-none {
+  display: none;
+}
+
+.pd-16 {
+  padding: 1.6rem;
+}
+
+.pd-30-tb {
+  padding: 3rem 0;
+}
+
+.pd-32-lr {
+  padding: 0 3.2rem;
+}
+
+.mg-16-b {
+  margin: 1.6rem;
+}
+
+@keyframes r2l {
+  0% {
+    transform: translateX(3rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

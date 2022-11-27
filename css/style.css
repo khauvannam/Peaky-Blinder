@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "RangeMono";
+  src: url(../font_ttf/range-mono-medium-webfont.ttf);
+}
+@font-face {
+  font-family: "VeenerTwo";
+  src: url(../font_ttf/FontsFree-Net-Veneer-W01-Two.ttf);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "RangeMono", sans-serif;
+  color: #000000;
+  font-weight: 300;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.dp-none {
+  display: none;
+}
+
+.pd-16 {
+  padding: 1.6rem;
+}
+
+.pd-30-tb {
+  padding: 3rem 0;
+}
+
+.pd-32-lr {
+  padding: 0 3.2rem;
+}
+
+.mg-16-b {
+  margin: 1.6rem;
+}
+
+@keyframes r2l {
+  0% {
+    transform: translateX(3rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.heading-1 {
+  color: #ffffff;
+  font-size: 4.5rem;
+}
+
+.heading-2 {
+  font-size: 3.2rem;
+}
+
+.header {
+  background-color: #141414;
+}
+.header__icon {
+  fill: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */
