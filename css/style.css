@@ -12,6 +12,9 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
 }
 
 html {
@@ -50,9 +53,11 @@ body {
 @keyframes r2l {
   0% {
     transform: translateX(3rem);
+    opacity: 0.3;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 .heading-1 {
@@ -61,14 +66,111 @@ body {
 }
 
 .heading-2 {
-  font-size: 3.2rem;
+  color: #ffffff;
+  padding: 1.6rem;
+  letter-spacing: 0.05rem;
+  font-size: 2.8rem;
+  line-height: 6.5rem;
+  margin-right: 0.1rem;
+  white-space: nowrap;
+  background-color: #141414;
+  text-transform: uppercase;
+  font-family: "VeenerTwo", sans-serif;
+}
+
+.header__container {
+  background-color: #141414;
+  max-width: 100%;
 }
 
 .header {
-  background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 12rem;
+  max-width: 137.6rem;
 }
-.header__icon {
+.header__button svg {
   fill: #ffffff;
+  padding-left: 0.44rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  transform: translateY(0.7rem);
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 1;
+}
+.header__nav--icon {
+  fill: #ffffff;
+  padding-left: 2.8rem;
+  padding-right: 1.6rem;
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header__logo--img {
+  width: 5rem;
+  height: 7rem;
+  display: block;
+}
+
+.account__bar {
+  color: #ffffff;
+  fill: #ffffff;
+  display: flex;
+  align-items: stretch;
+  gap: 1.6rem;
+  flex: 0 1 auto;
+}
+.account__bar__customer {
+  vertical-align: -0.2rem;
+}
+.account__bar--cart {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.account__bar--cart svg {
+  vertical-align: -0.2rem;
+}
+
+.cart__currency {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.discount {
+  text-align: center;
+}
+.discount__primary {
+  padding: 1.6rem 0;
+  background-color: #00006f;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.discount__primary u {
+  text-decoration: underline;
+}
+.discount__bonus--1 {
+  padding: 16px 0;
+  background-color: #b1b1b1;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: none;
+}
+.discount__bonus--1 span {
+  text-transform: lowercase;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,5 +3,14 @@
   font-size: 4.5rem;
 }
 .heading-2 {
-  font-size: 3.2rem;
+  color: $color-primary;
+  padding: 1.6rem;
+  letter-spacing: 0.05rem;
+  font-size: 2.8rem;
+  line-height: 6.5rem;
+  margin-right: 0.1rem;
+  white-space: nowrap;
+  background-color: $color-dark-2;
+  text-transform: uppercase;
+  font-family: $font-primary;
 }

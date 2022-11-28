@@ -1,0 +1,29 @@
+.discount {
+  text-align: center;
+
+  &__primary {
+    padding: 1.6rem 0;
+    background-color: $color-blue-dark;
+    color: $color-primary;
+    font-size: 1.6rem;
+    u {
+      text-decoration: underline;
+    }
+  }
+
+  &__bonus {
+    &--1 {
+      padding: 16px 0;
+      background-color: $color-grey-dark;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-transform: none;
+
+      span {
+        text-transform: lowercase;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

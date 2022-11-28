@@ -29,6 +29,9 @@ $bp-small: 40em;
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
 }
 
 html {
@@ -67,8 +70,10 @@ body {
 @keyframes r2l {
   0% {
     transform: translateX(3rem);
+    opacity: 0.3;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
