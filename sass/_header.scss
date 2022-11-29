@@ -1,18 +1,25 @@
 .header__container {
   background-color: $color-dark-2;
   max-width: 100%;
+  display: flex;
+  z-index: 2;
+  position: relative;
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: auto;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin: 0 auto;
-  gap: 12rem;
-  max-width: 137.6rem;
+  width: 137.6rem;
 
   &__button {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+
     svg {
       fill: $color-primary;
       padding-left: 0.44rem;
@@ -26,7 +33,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 1;
 
     &--icon {
       fill: $color-primary;
@@ -34,7 +40,7 @@
       padding-right: 1.6rem;
       display: flex;
       align-items: center;
-      flex: 1 0 auto;
+      cursor: pointer;
     }
   }
 
@@ -51,12 +57,13 @@
 }
 
 .account__bar {
+  justify-self: end;
   color: $color-primary;
   fill: $color-primary;
   display: flex;
   align-items: stretch;
   gap: 1.6rem;
-  flex: 0 1 auto;
+
   &__customer {
     vertical-align: -0.2rem;
   }
@@ -66,7 +73,7 @@
     gap: 0.8rem;
 
     svg {
-      vertical-align: -0.2rem;
+      transform: translateY(-0.3rem);
     }
   }
 }

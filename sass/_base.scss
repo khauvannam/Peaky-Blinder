@@ -11,7 +11,9 @@
 $color-primary: #ffffff;
 $color-dark-1: #000000;
 $color-blue-dark: #00006f;
-$color-grey-dark: #b1b1b1;
+$color-grey-dark-1: #b1b1b1;
+$color-grey-dark-2: #eaeaeae6;
+
 $color-dark-2: #141414;
 
 //? FONT VARIABLE.
@@ -76,4 +78,26 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $color-grey-dark-2;
+  animation: fadeIn 0.5s;
 }

@@ -60,6 +60,27 @@ body {
     opacity: 1;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(234, 234, 234, 0.9019607843);
+  animation: fadeIn 0.5s;
+}
+
 .heading-1 {
   color: #ffffff;
   font-size: 4.5rem;
@@ -81,16 +102,24 @@ body {
 .header__container {
   background-color: #141414;
   max-width: 100%;
+  display: flex;
+  z-index: 2;
+  position: relative;
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: auto;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin: 0 auto;
-  gap: 12rem;
-  max-width: 137.6rem;
+  width: 137.6rem;
+}
+.header__button {
+  cursor: pointer;
+}
+.header__button:hover {
+  opacity: 0.8;
 }
 .header__button svg {
   fill: #ffffff;
@@ -103,7 +132,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 1;
 }
 .header__nav--icon {
   fill: #ffffff;
@@ -111,7 +139,7 @@ body {
   padding-right: 1.6rem;
   display: flex;
   align-items: center;
-  flex: 1 0 auto;
+  cursor: pointer;
 }
 .header__logo {
   display: flex;
@@ -124,12 +152,12 @@ body {
 }
 
 .account__bar {
+  justify-self: end;
   color: #ffffff;
   fill: #ffffff;
   display: flex;
   align-items: stretch;
   gap: 1.6rem;
-  flex: 0 1 auto;
 }
 .account__bar__customer {
   vertical-align: -0.2rem;
@@ -140,7 +168,7 @@ body {
   gap: 0.8rem;
 }
 .account__bar--cart svg {
-  vertical-align: -0.2rem;
+  transform: translateY(-0.3rem);
 }
 
 .cart__currency {
