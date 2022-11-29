@@ -133,6 +133,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.header__nav--item:hover {
+  opacity: 0.8;
+}
 .header__nav--icon {
   fill: #ffffff;
   padding-left: 2.8rem;
@@ -199,6 +202,74 @@ body {
   text-transform: lowercase;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.slider {
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: transform 1s;
+}
+.slide > img {
+  width: 100%;
+  height: auto;
+}
+
+.slide__primary {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+  max-width: 85%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.slide__table {
+  position: relative;
+  padding: 4rem;
+  margin: 4rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.slide__table--background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-color: #000000;
+  opacity: 0.5;
+}
+.slide__table--content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+.slide__table--content h1 {
+  font-size: 3.2rem;
+  font-family: "VeenerTwo", sans-serif;
+  margin-bottom: 8px;
+  line-height: 35px;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+}
+.slide__table--content p {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
