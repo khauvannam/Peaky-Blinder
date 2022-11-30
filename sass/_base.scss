@@ -6,6 +6,10 @@
   font-family: "VeenerTwo";
   src: url(../font_ttf/FontsFree-Net-Veneer-W01-Two.ttf);
 }
+@font-face {
+  font-family: "FrontageCondReg";
+  src: url(../font_ttf/FrontageCondensed-Regular.ttf);
+}
 
 //? COLOR VARIABLE.
 $color-primary: #ffffff;
@@ -19,6 +23,7 @@ $color-dark-2: #141414;
 //? FONT VARIABLE.
 $font-display: "RangeMono", sans-serif;
 $font-primary: "VeenerTwo", sans-serif;
+$font-button: "FrontageCondReg", sans-serif;
 
 //? BREAKPOINT VARIABLE.
 $bp-largest: 63em;
@@ -100,7 +105,4 @@ body {
   width: 100%;
   background-color: $color-grey-dark-2;
   animation: fadeIn 0.5s;
-}
-
-.btn {
 }

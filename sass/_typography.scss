@@ -14,3 +14,23 @@
   text-transform: uppercase;
   font-family: $font-primary;
 }
+
+.btn {
+  font-family: $font-button;
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: $color-primary;
+  background-color: $color-dark-1;
+  padding: 1.2rem 2.4rem;
+  transition: all 0.3s;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

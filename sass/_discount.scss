@@ -2,6 +2,7 @@
   text-align: center;
 
   &__primary {
+    line-height: normal;
     padding: 1.6rem 0;
     background-color: $color-blue-dark;
     color: $color-primary;
@@ -13,6 +14,7 @@
 
   &__bonus {
     &--1 {
+      line-height: normal;
       padding: 16px 0;
       background-color: $color-grey-dark-1;
       font-size: 1.6rem;
