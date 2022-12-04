@@ -88,6 +88,12 @@ body {
 .heading-1 {
   color: #ffffff;
   font-size: 4.5rem;
+  font-family: "VeenerTwo", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.08rem;
+  line-height: 4.6rem;
+  text-align: center;
+  margin: 3.2rem 0;
 }
 
 .heading-2 {
@@ -120,6 +126,29 @@ body {
 }
 .btn:hover {
   opacity: 0.7;
+}
+
+.bestseller--header {
+  color: #000000;
+}
+
+.product__text {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+.product__text h2 {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-family: "VeenerTwo", sans-serif;
+  margin: 0 0.4rem;
+}
+.product__text p {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .header__container {
@@ -352,6 +381,26 @@ body {
 }
 .slide--3 {
   transform: translateX(100%);
+}
+
+.bestseller__container {
+  width: 100%;
+}
+.bestseller--product {
+  display: grid;
+  grid-column-gap: 2.4rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 3.2rem;
+  width: 100%;
+}
+
+.products {
+  display: grid;
+}
+.products img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
