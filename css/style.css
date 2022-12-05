@@ -72,6 +72,14 @@ body {
     opacity: 1;
   }
 }
+@keyframes sticky {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 .overlay {
   z-index: 1;
   position: fixed;
@@ -83,6 +91,40 @@ body {
   width: 100%;
   background-color: rgba(234, 234, 234, 0.9019607843);
   animation: fadeIn 0.5s;
+}
+
+.products {
+  display: grid;
+}
+.products__img {
+  cursor: pointer;
+  position: relative;
+}
+.products__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.products__img:hover::after {
+  transform: scale(1, 1);
+}
+.products__img::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  width: 100%;
+  height: 0.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0.1rem;
+  transform: scale(0, 1);
+  transition: transform 0.3s ease;
+}
+
+.header__container.is--sticky {
+  position: fixed;
+  box-shadow: rgba(255, 255, 255, 0.95);
+  animation: sticky 1s forwards;
 }
 
 .heading-1 {
@@ -230,6 +272,12 @@ body {
 .cart__currency {
   font-size: 1.2rem;
   line-height: 1;
+}
+
+.drop--menu {
+  position: absolute;
+  top: 100%;
+  background-color: inherit;
 }
 
 .discount {
@@ -384,6 +432,7 @@ body {
 
 .bestseller__container {
   width: 100%;
+  padding: 3rem 2rem;
 }
 .bestseller--product {
   display: grid;
@@ -393,13 +442,8 @@ body {
   width: 100%;
 }
 
-.products {
-  display: grid;
-}
-.products img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.clothes {
+  height: 80rem;
 }
 
 /*# sourceMappingURL=style.css.map */

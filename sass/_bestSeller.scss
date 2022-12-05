@@ -1,6 +1,7 @@
 .bestseller {
   &__container {
     width: 100%;
+    padding: 3rem 2rem;
   }
   &--product {
     display: grid;
@@ -8,14 +9,5 @@
     grid-template-columns: repeat(4, 1fr);
     padding: 0 3.2rem;
     width: 100%;
-  }
-}
-
-.products {
-  display: grid;
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
   }
 }
