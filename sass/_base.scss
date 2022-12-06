@@ -76,12 +76,12 @@ body {
 
 @keyframes r2l {
   0% {
-    transform: translateX(3rem);
+    transform: translate3d(10rem, 0, 0);
     opacity: 0.3;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateZ(0);
   }
 }
 
@@ -151,4 +151,8 @@ body {
   position: fixed;
   box-shadow: rgba(255, 255, 255, 0.95);
   animation: sticky 1s forwards;
+}
+
+.is--Opacity {
+  animation: r2l 0.8s ease-out;
 }

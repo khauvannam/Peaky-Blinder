@@ -29,6 +29,7 @@ const activeDots = (slideNumber) => {
     .classList.add("dots__dot--active");
 };
 
+//? SLIDE NEXT AND PREVIOUS.
 const initSlide = (slideNumbers) => {
   slides.forEach((s, i) => {
     s.style.transform = `translateX(${100 * (i - slideNumbers)}%)`;
@@ -44,7 +45,7 @@ const nextSlide = () => {
     curSlide++;
   }
   initSlide(curSlide);
-  clearInterval(time);
+  repeatAutoSlide();
   activeDots(curSlide);
 };
 
@@ -56,7 +57,7 @@ const previousSlide = () => {
   }
   initSlide(curSlide);
   activeDots(curSlide);
-  clearInterval(time);
+  repeatAutoSlide();
 };
 
 btnRight.addEventListener("click", nextSlide);
@@ -74,7 +75,7 @@ dotContainer.addEventListener("click", (e) => {
     curSlide = +e.target.dataset.slide;
     initSlide(curSlide);
     activeDots(curSlide);
-    clearInterval(time);
+    repeatAutoSlide();
   }
 });
 
@@ -88,17 +89,20 @@ const autoSlide = () => {
   initSlide(curSlide);
   activeDots(curSlide);
 };
+
 const time = setInterval(autoSlide, 3000);
 
-setTimeout(() => {
-  setInterval(autoSlide, 3000);
-}, 15000);
+const clearAuto = () => {
+  clearInterval(time);
+  // clearTimeout(timeOut);
+};
 
 //* STICKY HEADER.
 const header = document.querySelector(".header__container");
 const headerHeight = header.getBoundingClientRect().height;
 const slider = document.querySelector(".slider");
 const discount = document.querySelector(".discount");
+
 const headerSticky = (entries) => {
   const [entry] = entries;
   if (!entry.isIntersecting) {

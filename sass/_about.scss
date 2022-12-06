@@ -1,0 +1,27 @@
+.about {
+  &__header {
+    color: $color-dark-1;
+    font-weight: normal;
+    line-height: 4rem;
+    font-size: 3.2rem;
+  }
+  &__text {
+    text-align: center;
+
+    p {
+      line-height: 3.2rem;
+      margin-bottom: 1.6rem;
+      letter-spacing: normal;
+      font-family: $font-button;
+      font-size: 1.6rem;
+    }
+    h3 {
+      font-size: 2.2rem;
+      letter-spacing: 0;
+      font-family: $font-primary;
+      font-weight: normal;
+      margin-top: 1.6rem;
+      line-height: 3rem;
+    }
+  }
+}

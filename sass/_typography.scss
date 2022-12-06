@@ -41,6 +41,12 @@
   }
 }
 
+.clothes {
+  &--header {
+    color: $color-dark-1;
+  }
+}
+
 .bestseller {
   &--header {
     color: $color-dark-1;

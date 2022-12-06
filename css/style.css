@@ -56,12 +56,12 @@ body {
 
 @keyframes r2l {
   0% {
-    transform: translateX(3rem);
+    transform: translate3d(10rem, 0, 0);
     opacity: 0.3;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateZ(0);
   }
 }
 @keyframes fadeIn {
@@ -127,6 +127,10 @@ body {
   animation: sticky 1s forwards;
 }
 
+.is--Opacity {
+  animation: r2l 0.8s ease-out;
+}
+
 .heading-1 {
   color: #ffffff;
   font-size: 4.5rem;
@@ -170,6 +174,10 @@ body {
   opacity: 0.7;
 }
 
+.clothes--header {
+  color: #000000;
+}
+
 .bestseller--header {
   color: #000000;
 }
@@ -195,7 +203,7 @@ body {
 
 .header__container {
   background-color: #141414;
-  max-width: 100%;
+  width: 100%;
   display: flex;
   z-index: 2;
   position: relative;
@@ -278,6 +286,7 @@ body {
   position: absolute;
   top: 100%;
   background-color: inherit;
+  display: none;
 }
 
 .discount {
@@ -442,8 +451,99 @@ body {
   width: 100%;
 }
 
-.clothes {
-  height: 80rem;
+.clothes__container {
+  width: 100%;
+  padding: 3rem 2rem;
+}
+.clothes__buttons {
+  align-self: center;
+  justify-self: center;
+  display: block;
+  font-family: "RangeMono", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateY(-5rem);
+}
+.clothes--products {
+  display: grid;
+  grid-gap: 2.4rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 3.2rem;
+  width: 100%;
+}
+
+.accessories__header {
+  color: #000000;
+}
+
+.gallery__img {
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease-out;
+}
+.gallery__img:hover {
+  transform: scale(1.2);
+}
+.gallery__img--1 {
+  background-image: url(../img/gallery/gallery--1.webp);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.gallery__img--2 {
+  background-image: url(../img/gallery/gallery--2.webp);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.gallery__img--3 {
+  background-image: url(../img/gallery/gallery--3.webp);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.gallery__img--4 {
+  background-image: url(../img/gallery/gallery--4.webp);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.gallery__container {
+  max-width: 137.6rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20rem, 1fr));
+}
+.gallery__container--img {
+  height: 34rem;
+  width: auto;
+  overflow: hidden;
+}
+
+.about__header {
+  color: #000000;
+  font-weight: normal;
+  line-height: 4rem;
+  font-size: 3.2rem;
+}
+.about__text {
+  text-align: center;
+}
+.about__text p {
+  line-height: 3.2rem;
+  margin-bottom: 1.6rem;
+  letter-spacing: normal;
+  font-family: "FrontageCondReg", sans-serif;
+  font-size: 1.6rem;
+}
+.about__text h3 {
+  font-size: 2.2rem;
+  letter-spacing: 0;
+  font-family: "VeenerTwo", sans-serif;
+  font-weight: normal;
+  margin-top: 1.6rem;
+  line-height: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

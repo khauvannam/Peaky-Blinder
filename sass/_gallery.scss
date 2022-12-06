@@ -1,0 +1,50 @@
+.gallery {
+  &__img {
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--1 {
+      background-image: url(../img/gallery/gallery--1.webp);
+      background-size: cover;
+      background-position: center center;
+      height: 100%;
+      background-repeat: no-repeat;
+    }
+    &--2 {
+      background-image: url(../img/gallery/gallery--2.webp);
+      background-size: cover;
+      background-position: center center;
+      height: 100%;
+    }
+    &--3 {
+      background-image: url(../img/gallery/gallery--3.webp);
+      background-size: cover;
+      background-position: center center;
+      height: 100%;
+    }
+    &--4 {
+      background-image: url(../img/gallery/gallery--4.webp);
+      background-size: cover;
+      background-position: center center;
+      height: 100%;
+    }
+  }
+
+  &__container {
+    max-width: 137.6rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(20rem, 1fr));
+
+    &--img {
+      height: 34rem;
+      width: auto;
+      overflow: hidden;
+    }
+  }
+}

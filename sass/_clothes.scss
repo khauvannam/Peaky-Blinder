@@ -1,3 +1,24 @@
 .clothes {
-  height: 80rem;
+  &__container {
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+
+  &__buttons {
+    align-self: center;
+    justify-self: center;
+    display: block;
+    font-family: $font-display;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: translateY(-5rem);
+  }
+
+  &--products {
+    display: grid;
+    grid-gap: 2.4rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 3.2rem;
+    width: 100%;
+  }
 }
