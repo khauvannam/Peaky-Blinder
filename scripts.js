@@ -7,6 +7,7 @@ const slides = document.querySelectorAll(".slide");
 let curSlide = 0;
 const maxSlide = slides.length;
 const dotContainer = document.querySelector(".dots");
+let timeOut;
 
 const creatDots = () => {
   slides.forEach((_, i) => {
@@ -45,8 +46,8 @@ const nextSlide = () => {
     curSlide++;
   }
   initSlide(curSlide);
-  repeatAutoSlide();
   activeDots(curSlide);
+  repeatAutoSlide();
 };
 
 const previousSlide = () => {
@@ -92,9 +93,12 @@ const autoSlide = () => {
 
 const time = setInterval(autoSlide, 3000);
 
-const clearAuto = () => {
+const repeatAutoSlide = () => {
   clearInterval(time);
-  // clearTimeout(timeOut);
+  clearTimeout(timeOut);
+  timeOut = setTimeout(() => {
+    setInterval(autoSlide, 3000);
+  }, 15000);
 };
 
 //* STICKY HEADER.
@@ -127,3 +131,22 @@ const discountObserver = new IntersectionObserver(disCountRemoveSticky, {
 
 headerObserver.observe(slider);
 discountObserver.observe(discount);
+
+//* ACCESSORIES IMPLEMENTS.
+const buttonContainer = document.querySelector(".button__container");
+const buttonItem = document.querySelectorAll(".buttons__container--item");
+const accessoriesProduct = document.querySelectorAll(".accessories__product");
+
+buttonContainer.addEventListener("click", (e) => {
+  const dataTab = e.target.closest(".buttons__container--item").dataset.tab;
+
+  //? ADD CLASSLIST TO ALL TAGS
+  buttonItem.forEach((item) => item.classList.remove("opacity--03"));
+  accessoriesProduct.forEach((product) => product.classList.add("dp-none"));
+
+  //? IMPLEMENT DOM
+  e.target.closest(".buttons__container--item").classList.add("opacity--03");
+  document
+    .querySelector(`.accessories__products--${dataTab}`)
+    .classList.remove("dp-none");
+});

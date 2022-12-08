@@ -1,5 +1,58 @@
 .accessories {
+  &__container {
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+
   &__header {
     color: $color-dark-1;
+  }
+
+  &__products {
+    &--1,
+    &--2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 2.4rem;
+      padding: 0 3.2rem;
+      width: 100%;
+      animation: fadeIn 0.5s ease-out;
+    }
+  }
+}
+
+.button__container {
+  margin-top: 2.4rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons__container--item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  height: auto;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button {
+  &--prev {
+    position: relative;
+
+    &::after {
+      content: "";
+      border-right: 1px solid rgba(0, 0, 0, 0.5);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      height: 45%;
+      width: 1px;
+      transform: translateY(-50%);
+    }
   }
 }

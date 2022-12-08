@@ -55,7 +55,7 @@ body {
 }
 
 .dp-none {
-  display: none;
+  display: none !important;
 }
 
 .pd-16 {
@@ -122,10 +122,18 @@ body {
   &__img {
     cursor: pointer;
     position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     img {
       display: block;
       width: 100%;
       height: 100%;
+      transition: all 0.5s ease;
+
+      &:hover {
+        transform: translateY(-1rem);
+      }
     }
 
     &:hover::after {
@@ -155,4 +163,8 @@ body {
 
 .is--Opacity {
   animation: r2l 0.8s ease-out;
+}
+
+.opacity--03 {
+  opacity: 0.3;
 }
