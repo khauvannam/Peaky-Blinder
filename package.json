@@ -4,9 +4,7 @@
   "description": "first project by myself",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass --watch sass/main.scss:css/style.css",
-    "compressed:sass": "sass --watch sass/main.scss:css/style.css --style compressed",
-    "prefixer": "npx postcss css/style.css --use autoprefixer -d css/"
+    "start": "npm install && gulp"
   },
   "repository": {
     "type": "git",
@@ -18,13 +16,11 @@
     "url": "https://github.com/kobukovu-203/Peaky-Blinder/issues"
   },
   "homepage": "https://github.com/kobukovu-203/Peaky-Blinder#readme",
-  "devDependencies": {
-    "sass": "^1.56.1"
-  },
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.19",
-    "postcss-cli": "^10.0.0",
-    "remixicon": "^2.5.0"
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.56.2"
   }
 }
