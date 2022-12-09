@@ -3,8 +3,8 @@ const autoPrefixer = require("gulp-autoprefixer");
 const scss = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 
-function style() {
-  return src("./sass/**/main.scss")
+function styles() {
+  return src("./sass/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
     .pipe(autoPrefixer("last 2 version"))
@@ -13,7 +13,7 @@ function style() {
 }
 
 function watchTask() {
-  watch(["./sass/**/main.scss"], series(style));
+  watch(["./sass/**/*.scss"], series(styles));
 }
 
-exports.default = series(style, watchTask);
+exports.default = series(styles, watchTask);
