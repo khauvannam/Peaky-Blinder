@@ -4,8 +4,9 @@
   color: $color-primary;
   padding: 4rem 0;
 }
+
 .footer {
-  &__container {
+  &__container--list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     grid-gap: 4.8rem 3.2rem;
@@ -33,6 +34,34 @@
       justify-content: center;
       margin-top: 1.6rem;
       font-size: 1.6rem;
+      cursor: pointer;
+    }
+  }
+  &__container--bottom {
+    padding: 2.4rem;
+    margin: 0 auto;
+    max-width: 137.6rem;
+  }
+}
+
+.footer__creditCard {
+  &--primary {
+    margin-bottom: 1.6rem;
+  }
+
+  &--list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--item {
+    list-style-type: none;
+    margin: 0 0.8rem 0.8rem 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
