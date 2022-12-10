@@ -1,5 +1,7 @@
 "use strict";
 
+const overlay = document.querySelector(".overlay");
+
 //* SLIDE CREATE.
 const btnRight = document.querySelector(".slider__btn--right");
 const btnleft = document.querySelector(".slider__btn--left");
@@ -149,4 +151,74 @@ buttonContainer.addEventListener("click", (e) => {
   document
     .querySelector(`.accessories__products--${dataTab}`)
     .classList.remove("dp-none");
+});
+
+//* DROP--MENU IMPLEMENT.
+
+const obj = {
+  clothing: [
+    "hoodies",
+    "long sleeves",
+    "sweatshirts",
+    "t-shirt",
+    "women t-shirt",
+  ],
+  accessories: [
+    "bags",
+    "cushions",
+    "drinkware",
+    "facemask",
+    "hats",
+    "notebooks",
+    "phonecases",
+    "socks",
+    "wall art",
+  ],
+  characters: ["arthur shelby", "tommy shelby", "polly grey"],
+  info: ["about peakyblinder", "faq", "return", "size guide", "delivery times"],
+};
+
+const headerItem = document.querySelectorAll(".header__button");
+const headerContainer = document.querySelector(".header__nav");
+const dropMenuContainer = document.querySelector(".drop--menu__list");
+const dropMenu = document.querySelector(".drop--menu");
+const fistChildHeader =
+  document.querySelector(".header__nav").firstElementChild;
+
+headerContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("header__nav--item")) return; //? Guard.
+
+  const dropItemsData = e.target.closest(".header__button").dataset.head;
+  const dropItems = e.target.closest(".header__button");
+  dropMenuContainer.innerHTML = "";
+
+  obj[dropItemsData].forEach((items) => {
+    const html = `<div class="drop--menu__item">${items}</div>`;
+    dropMenuContainer.insertAdjacentHTML("beforeend", html);
+  });
+
+  if (!dropItems.classList.contains("is--active")) {
+    headerItem.forEach((e) => {
+      e.classList.remove("is--active");
+    });
+
+    dropItems.classList.add("is--active");
+    dropMenu.classList.remove("dp-none");
+    overlay.classList.remove("dp-none");
+  } else {
+    dropMenu.classList.add("dp-none");
+    overlay.classList.add("dp-none");
+    dropItems.classList.remove("is--active");
+  }
+});
+
+overlay.addEventListener("click", function () {
+  if (!overlay.classList.contains("dp-none")) {
+    overlay.classList.add("dp-none");
+    dropMenu.classList.add("dp-none");
+
+    headerItem.forEach((e) => {
+      e.classList.remove("is--active");
+    });
+  }
 });

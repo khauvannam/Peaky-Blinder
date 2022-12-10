@@ -4,7 +4,7 @@
   "description": "first project by myself",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && gulp"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
