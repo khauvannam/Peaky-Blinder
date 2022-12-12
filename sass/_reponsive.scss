@@ -1,0 +1,17 @@
+@media only screen and (max-width: 50em) {
+  .product {
+    display: flex;
+    grid-gap: 3rem;
+    justify-content: flex-start;
+    padding: 0 0;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  .products {
+    min-width: 31.25rem;
+    max-width: 33.75rem;
+    width: 33.75rem;
+    margin: 0 2rem;
+  }
+} ;

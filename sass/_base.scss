@@ -44,6 +44,10 @@ $bp-small: 40em;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: 64em) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -74,7 +78,7 @@ body {
   margin: 1.6rem;
 }
 
-@keyframes r2l {
+@keyframes R2L {
   0% {
     transform: translate3d(10rem, 0, 0);
     opacity: 0.3;
@@ -161,8 +165,8 @@ body {
   animation: sticky 1s forwards;
 }
 
-.is--Opacity {
-  animation: r2l 0.8s ease-out;
+.product.is--Opacity {
+  animation: R2L 0.8s ease-out;
 }
 
 .opacity--03 {

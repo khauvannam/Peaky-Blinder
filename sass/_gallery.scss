@@ -39,12 +39,17 @@
     max-width: 137.6rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, minmax(20rem, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    @media only screen and (max-width: 31.25em) {
+      grid-template-columns: 1fr;
+    }
     &--img {
       height: 34rem;
       width: auto;
       overflow: hidden;
+      @media only screen and (max-width: 31.25em) {
+        height: 42.5rem;
+      }
     }
   }
 }

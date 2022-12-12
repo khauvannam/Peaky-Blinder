@@ -36,6 +36,10 @@
     align-items: center;
     justify-content: center;
 
+    @media only screen and (max-width: 68em) {
+      display: none;
+    }
+
     &--item {
       &:hover {
         opacity: 0.8;
@@ -57,7 +61,7 @@
     align-items: center;
 
     &--img {
-      width: 5.3rem;
+      width: auto;
       height: 7.2rem;
       display: block;
     }
@@ -73,7 +77,15 @@
   gap: 1.6rem;
 
   &--customer {
-    vertical-align: -0.2rem;
+    display: inline-block;
+    overflow: visible;
+    transform: translateY(-0.6rem);
+    width: 2.7rem;
+    height: 2.7rem;
+
+    @media only screen and (max-width: 68em) {
+      display: none;
+    }
   }
   &--cart {
     display: flex;
@@ -81,7 +93,16 @@
     gap: 0.8rem;
 
     svg {
-      transform: translateY(-0.3rem);
+      display: inline-block;
+      overflow: visible;
+      transform: translateY(-0.6rem);
+      width: 2.4rem;
+      height: 2.8rem;
+
+      @media only screen and (max-width: 64em) {
+        width: 3rem;
+        height: 3.5rem;
+      }
     }
   }
 }
@@ -89,4 +110,29 @@
 .cart__currency {
   font-size: 1.2rem;
   line-height: 1;
+  transform: translateY(-0.3rem);
+
+  @media only screen and (max-width: 68em) {
+    display: none;
+  }
+}
+
+.mini__bar--search {
+  svg {
+    display: none;
+
+    @media only screen and (max-width: 68em) {
+      display: inline-block;
+      overflow: visible;
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $color-primary;
+      transform: translateY(-0.3rem);
+    }
+    @media only screen and (max-width: 64em) {
+      width: 3rem;
+      height: 3rem;
+      transform: translateY(-0.16rem);
+    }
+  }
 }

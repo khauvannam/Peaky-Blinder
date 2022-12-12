@@ -197,28 +197,46 @@ headerContainer.addEventListener("click", function (e) {
     dropMenuContainer.insertAdjacentHTML("beforeend", html);
   });
 
+  dropMenu.classList.remove("dp-none");
+  overlay.classList.remove("dp-none");
+
   if (!dropItems.classList.contains("is--active")) {
     headerItem.forEach((e) => {
       e.classList.remove("is--active");
     });
-
-    dropItems.classList.add("is--active");
-    dropMenu.classList.remove("dp-none");
-    overlay.classList.remove("dp-none");
   } else {
     dropMenu.classList.add("dp-none");
     overlay.classList.add("dp-none");
-    dropItems.classList.remove("is--active");
   }
+
+  dropItems.classList.toggle("is--active");
 });
 
 overlay.addEventListener("click", function () {
-  if (!overlay.classList.contains("dp-none")) {
-    overlay.classList.add("dp-none");
-    dropMenu.classList.add("dp-none");
+  overlay.classList.add("dp-none");
+  dropMenu.classList.add("dp-none");
 
-    headerItem.forEach((e) => {
-      e.classList.remove("is--active");
-    });
-  }
+  headerItem.forEach((e) => {
+    e.classList.remove("is--active");
+  });
+});
+
+//* PRODUCTS R2L ANIMATION.
+const products = document.querySelectorAll(".product");
+
+const productR2L = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.add("is--Opacity");
+  observer.unobserve(entry.target);
+};
+
+const productObserver = new IntersectionObserver(productR2L, {
+  root: null,
+  threshold: 0,
+});
+
+products.forEach((product) => {
+  productObserver.observe(product);
 });
