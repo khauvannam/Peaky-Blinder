@@ -49,7 +49,6 @@ const nextSlide = () => {
   }
   initSlide(curSlide);
   activeDots(curSlide);
-  repeatAutoSlide();
 };
 
 const previousSlide = () => {
@@ -60,7 +59,6 @@ const previousSlide = () => {
   }
   initSlide(curSlide);
   activeDots(curSlide);
-  repeatAutoSlide();
 };
 
 btnRight.addEventListener("click", nextSlide);
@@ -78,7 +76,6 @@ dotContainer.addEventListener("click", (e) => {
     curSlide = +e.target.dataset.slide;
     initSlide(curSlide);
     activeDots(curSlide);
-    repeatAutoSlide();
   }
 });
 
@@ -178,24 +175,35 @@ const obj = {
   info: ["about peakyblinder", "faq", "return", "size guide", "delivery times"],
 };
 
-const headerItem = document.querySelectorAll(".header__button");
+const headerItem = document.querySelectorAll(".header--target");
 const headerContainer = document.querySelector(".header__nav");
-const dropMenuContainer = document.querySelector(".drop--menu__list");
+const dropmenuList = document.querySelector(".drop--menu__list");
 const dropMenu = document.querySelector(".drop--menu");
-const fistChildHeader =
-  document.querySelector(".header__nav").firstElementChild;
+const dropmenuContainer = document.querySelector(".drop--menu__container");
 
 headerContainer.addEventListener("click", function (e) {
   if (e.target.classList.contains("header__nav--item")) return; //? Guard.
 
-  const dropItemsData = e.target.closest(".header__button").dataset.head;
-  const dropItems = e.target.closest(".header__button");
-  dropMenuContainer.innerHTML = "";
+  const dropItemsData = e.target.closest(".header--target").dataset.head;
+  const dropItems = e.target.closest(".header--target");
+  dropmenuList.innerHTML = "";
 
-  obj[dropItemsData].forEach((items) => {
-    const html = `<div class="drop--menu__item">${items}</div>`;
-    dropMenuContainer.insertAdjacentHTML("beforeend", html);
-  });
+  if (dropItemsData !== "search") {
+    obj[dropItemsData].forEach((items) => {
+      const html = `<div class="drop--menu__item">${items}</div>`;
+      dropmenuList.insertAdjacentHTML("beforeend", html);
+      dropmenuList.style.padding = " 0 ";
+      dropmenuContainer.style.padding = ".4rem 1.6rem 1.6rem";
+      dropmenuContainer.classList.remove("pseduoClass");
+    });
+  } else {
+    const html = `<div class= "drop--menu__content"><p class="drop--menu__content">search for product on our site</p>
+    <div class= "drop--menu__searchbox"> <input type="text" name="" placeholder="search our store" </div> </div>`;
+    dropmenuList.style.padding = "4.8rem 0 ";
+    dropmenuContainer.style.padding = "0";
+    dropmenuList.insertAdjacentHTML("beforeend", html);
+    dropmenuContainer.classList.add("pseduoClass");
+  }
 
   dropMenu.classList.remove("dp-none");
   overlay.classList.remove("dp-none");
