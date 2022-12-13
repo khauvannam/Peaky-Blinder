@@ -7,11 +7,19 @@
   &__buttons {
     align-self: center;
     justify-self: center;
-    display: block;
+    display: flex;
     font-family: $font-display;
     text-transform: uppercase;
     cursor: pointer;
     transform: translateY(-5rem);
+
+    @media only screen and (max-width: 50em) {
+      justify-content: center;
+      align-items: center;
+      min-width: 31.25rem;
+      max-width: 33.75rem;
+      width: 33.75rem;
+    }
   }
 
   &--products {

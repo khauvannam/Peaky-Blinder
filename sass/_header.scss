@@ -16,6 +16,11 @@
   margin: 0 auto;
   width: 137.6rem;
 
+  @media only screen and (max-width: 68em) {
+    display: flex;
+    gap: 1.5rem 3rem;
+  }
+
   &__button {
     cursor: pointer;
     &:hover {
@@ -59,11 +64,16 @@
   &__logo {
     display: flex;
     align-items: center;
+    flex: 1 0 auto;
 
     &--img {
       width: auto;
       height: 7.2rem;
       display: block;
+
+      @media only screen and (max-width: 68em) {
+        height: 9rem;
+      }
     }
   }
 }

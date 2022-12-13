@@ -64,6 +64,9 @@ body {
 
 .pd-16 {
   padding: 1.6rem;
+  @media only screen and (max-width: 50em) {
+    padding: 1rem;
+  }
 }
 
 .pd-30-tb {

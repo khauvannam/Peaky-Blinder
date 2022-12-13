@@ -93,7 +93,7 @@ const autoSlide = () => {
   activeDots(curSlide);
 };
 
-const time = setInterval(autoSlide, 3000);
+// const time = setInterval(autoSlide, 3000);
 
 const repeatAutoSlide = () => {
   clearInterval(time);
