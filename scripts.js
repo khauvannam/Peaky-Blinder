@@ -192,13 +192,14 @@ headerContainer.addEventListener("click", function (e) {
     obj[dropItemsData].forEach((items) => {
       const html = `<div class="drop--menu__item">${items}</div>`;
       dropmenuList.insertAdjacentHTML("beforeend", html);
-      dropmenuList.style.padding = " 0 ";
-      dropmenuContainer.style.padding = ".4rem 1.6rem 1.6rem";
-      dropmenuContainer.classList.remove("pseduoClass");
     });
+    dropmenuList.style.padding = " 0 ";
+    dropmenuContainer.style.padding = ".4rem 1.6rem 1.6rem";
+    dropmenuContainer.classList.remove("pseduoClass");
   } else {
     const html = `<div class= "drop--menu__content"><p class="drop--menu__content">search for product on our site</p>
     <div class= "drop--menu__searchbox"> <input type="text" name="" placeholder="search our store" </div> </div>`;
+
     dropmenuList.style.padding = "4.8rem 0 ";
     dropmenuContainer.style.padding = "0";
     dropmenuList.insertAdjacentHTML("beforeend", html);
