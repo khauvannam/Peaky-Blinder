@@ -19,7 +19,6 @@
             type="image/png"
     />
     <title>SHOP.PEAKYBLINDERS</title>
-    <script defer src="./scriptProduct.js"></script>
 </head>
 <body>
 <div class="container">
@@ -27,19 +26,20 @@
         <div class="discount__primary">
             15% OFF EVERYTHING FOR BLACK FRIDAY (CODE: <u>PBBLKFRI22</u>)
         </div>
-
     </section>
     <div class="account__page">
         <div class="account__page--grid">
             <div class="account__page--header">
-                <div class="logo"><a href="" class="logo--link">
-                    <img src="./img/form.webp" alt="#" class="logo--img" width="5" height="7"></a>
+                <div class="logo">
+                    <a href="" class="logo--link">
+                        <img src="./img/login.webp" alt="#" class="logo--img" width="5" height="7">
+                    </a>
                 </div>
             </div>
             <div class="account__page--content">
                 <div class="">
                     <div class="">
-                        <form style="margin: 0" action="">
+                        <form id="loginForm" style="margin: 0" action="">
                             <div class="form--grid">
                                 <div class="form--header">
                                     <div class="inner">
@@ -48,14 +48,16 @@
                                     </div>
                                 </div>
                                 <div class="form--row">
-                                    <input type="text" placeholder="Email">
+                                    <input type="text" id="email" placeholder="Email" required>
+                                    <span id="emailError" class="error"></span>
                                 </div>
                                 <div class="form--row">
-                                    <input type="text" placeholder="Password">
+                                    <input type="password" id="password" placeholder="Password">
+                                    <span id="passwordError" class="error"></span>
                                 </div>
                                 <div class="form--submit">
                                     <div class="submit--inner">
-                                        <button>Sign in</button>
+                                        <button type="button" onclick="validateForm()">Sign in</button>
                                         <div class="text">Not Registered?</div>
                                     </div>
                                 </div>
@@ -73,4 +75,36 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+
+        if (!validateForm()) {
+            event.preventDefault();
+        }
+    });
+
+    function validateForm() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let isValidate = true;
+
+        if (!emailRegex.test(email)) {
+            emailError.innerHTML = "Invalid email format";
+            isValidate = false
+        } else {
+            emailError.innerHTML = "";
+        }
+        if (password.length < 8) {
+            isValidate = false
+            passwordError.innerHTML = "Password must be at least 8 characters long";
+        } else {
+            passwordError.innerHTML = "";
+        }
+        return isValidate
+    }
+</script>
 </body>

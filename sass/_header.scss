@@ -91,6 +91,15 @@
   gap: 1.6rem;
 
   &--customer {
+    a {
+      color: #ffffff;
+      :hover {
+        cursor: pointer;
+        color : #777777;
+        opacity: 0.8;
+
+      }
+    }
     display: inline-block;
     overflow: visible;
     transform: translateY(-0.6rem);
